@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { memo, useCallback, useState } from "react"
 import type { IFile } from "../interfaces"
 import BootomArrowIcon from "../SVG/BootomArrowIcon"
-import FileIcon from "../SVG/FileIcon"
 import { FolderIcon } from "../SVG/FolderIcon"
 import RightArrowIcon from "../SVG/RightArrowIcon"
+import FileExteanionsIcon from "./FileExteanionsIcon"
 
 interface IProps {
     FileTree: IFile
@@ -13,17 +13,20 @@ const RecursiveComponent = ({FileTree: {name, isFolder, children}}: IProps) => {
 
 
     // ** Handlers
-    const toggle = () => setIsOpen(prev => !prev)
+    const toggle = useCallback(() => setIsOpen(prev => !prev),[])
+
+    
     return (<>
         <div className="ml-2 mb-2">
-        <div className="flex items-center mb-2 cursor-pointer" onClick={toggle}>
+        <div className={`flex items-center mb-2 cursor-pointer ${!isFolder ? "ml-2" : null}`} onClick={toggle}>
             {
                 isFolder ? <>
                     <div className="flex items-center mr-1">
                         {isOpen ? <><RightArrowIcon /></> : <><BootomArrowIcon /></>}
                         <FolderIcon />
                     </div>
-                </> : <span className="mr-1"><FileIcon /></span>
+                </> :
+                <span className="mr-1"><FileExteanionsIcon fileName={name}/></span>
             }
             <span>
                 {name}
@@ -34,4 +37,4 @@ const RecursiveComponent = ({FileTree: {name, isFolder, children}}: IProps) => {
 </>)
 }
 
-export default RecursiveComponent
+export default memo(RecursiveComponent)
