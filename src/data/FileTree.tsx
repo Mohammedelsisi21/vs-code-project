@@ -20,6 +20,17 @@ export const FileTree: IFile = {
             ]
         },
         {
+            name: "pulbic",
+            isFolder: true,
+            children: [
+                {
+                    name: "vite.svg",
+                    isFolder: false
+                }
+            ]
+        }
+        ,
+        {
             name: "index.html",
             isFolder: false
         }
