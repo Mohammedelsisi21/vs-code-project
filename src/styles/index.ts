@@ -1,0 +1,1 @@
+export const svgStyle = {width: "20px" , height: "20px"}
