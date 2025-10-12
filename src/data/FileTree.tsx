@@ -27,7 +27,7 @@ export const FileTree: IFile = {
             ]
         },
         {
-            name: "pulbic",
+            name: "public",
             isFolder: true,
             children: [
                 {
