@@ -7,7 +7,17 @@ export const FileTree: IFile = {
     children: [
         {
             name: "node_modules",
-            isFolder: true
+            isFolder: true,
+            children: [
+                {
+                    name: ".vite",
+                    isFolder: true,
+                    children: [{
+                        name: "react.js",
+                        isFolder: false,
+                    }]
+                }
+            ]
         },
         {
             name: "index.html",
