@@ -5,12 +5,15 @@ import BarList from "./BarList"
 
 
 const FileOpendBar = () => {
-    const { openFile } = useSelector((store: RootState) => store.fileTree)
+    const { openFile, clickedFile } = useSelector((store: RootState) => store.fileTree)
     
     return (
-    <ul className="flex space-x-3">
+    <div>
+      <ul className="flex space-x-3">
         {openFile.map((file) => <BarList key={file.id} file={file}/>)}
     </ul>
+    {clickedFile.fileContent}
+    </div>
   )
 }
 
