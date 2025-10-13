@@ -2,19 +2,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import type { IFile } from '../interfaces'
 import CloseTab from '../SVG/CloseTab'
 import FileExteanionsIcon from './FileExteanionsIcon'
-import { setActiveTab, setClikedFile } from '../redux/features/tree/fileTreeSlice'
+import { setClikedFile } from '../redux/features/tree/fileTreeSlice'
 import type { RootState } from '../redux/store'
 
 interface IPorps  {
     file: IFile
 }
 const BarList = ({ file } : IPorps) => {
-  const {activeTab} = useSelector((store:RootState) => store.fileTree)
+  const {clickedFile: {activeTab}} = useSelector((store:RootState) => store.fileTree)
   const dispatch = useDispatch()
   const onClick = () => {
     const {id,name, content} = file
-    dispatch(setClikedFile({fileName: name, fileContent: content}))
-    dispatch(setActiveTab(id))
+    dispatch(setClikedFile({fileName: name, fileContent: content, activeTab: id})) 
   }
   
   return (<>

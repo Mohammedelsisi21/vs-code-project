@@ -4,7 +4,7 @@ import BootomArrowIcon from "../SVG/BootomArrowIcon"
 import RightArrowIcon from "../SVG/RightArrowIcon"
 import FileExteanionsIcon from "./FileExteanionsIcon"
 import { useDispatch, useSelector } from "react-redux"
-import { setActiveTab, setOpenedFile } from "../redux/features/tree/fileTreeSlice"
+import { setClikedFile, setOpenedFile } from "../redux/features/tree/fileTreeSlice"
 import type { RootState } from "../redux/store"
 import { doseFileOpend } from "../utils"
 
@@ -12,7 +12,7 @@ interface IProps {
     FileTree: IFile
 }
 const RecursiveComponent = ({FileTree}: IProps) => {
-    const  {id ,name, isFolder, children} = FileTree
+    const  {id ,name, isFolder, children, content} = FileTree
     const [isOpen, setIsOpen] = useState<boolean>(true)
     const dispatch = useDispatch()
     const {openFile} = useSelector((store: RootState) => store.fileTree)
@@ -22,9 +22,9 @@ const RecursiveComponent = ({FileTree}: IProps) => {
 
     const onFileOpen = () => {
         const isOpenFile = doseFileOpend(openFile, id)
+        dispatch(setClikedFile({fileName: name, fileContent: content, activeTab: id})) 
         if(isOpenFile) return
-        dispatch(setOpenedFile([...openFile, FileTree]))
-        dispatch(setActiveTab(id))
+        dispatch(setOpenedFile([...openFile, FileTree])) 
     }
     return (<>
         <div className="ml-2 mb-2">
