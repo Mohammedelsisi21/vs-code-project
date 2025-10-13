@@ -22,7 +22,6 @@ const RecursiveComponent = ({FileTree: {name, isFolder, children}}: IProps) => {
                 isFolder ? <>
                     <div className="flex items-center mr-1">
                         {isOpen ? <><RightArrowIcon /></> : <><BootomArrowIcon /></>}
-                        {/* <FolderIcon /> */}
                         <span className="mr-1"><FileExteanionsIcon fileName={name} isFolder={isFolder} isOpen={isOpen}/></span>
                     </div>
                 </> :
