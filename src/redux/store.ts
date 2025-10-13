@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
-
+import fileTreeSlice from "./features/tree/fileTreeSlice"
 
 export const store = configureStore({
-    reducer: {}
+    reducer: {
+        fileTree: fileTreeSlice
+    }
 })
 
 export type RootState = ReturnType<typeof store.getState>
