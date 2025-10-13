@@ -8,11 +8,13 @@ interface ICliked {
 }
 
 interface IInitialState {
+    activeTab: string | null
     openFile: IFile[],
     clickedFile: ICliked
 }
 
 const initialState: IInitialState = {
+    activeTab: null,
     openFile: [],
     clickedFile: {
         fileName: "",
@@ -28,12 +30,14 @@ const fileTreeSlice = createSlice({
             state.openFile = actions.payload
         },
         setClikedFile: (state, actions: PayloadAction<ICliked>) =>{
-            state.clickedFile.fileName = actions.payload.fileName
-            state.clickedFile.fileContent = actions.payload.fileContent
+            state.clickedFile = actions.payload
+        },
+        setActiveTab: (state, actions: PayloadAction<string>) => {
+            state.activeTab = actions.payload
         }
     }
 })
 
-export const { setOpenedFile , setClikedFile } = fileTreeSlice.actions
+export const { setOpenedFile , setClikedFile, setActiveTab } = fileTreeSlice.actions
 
 export default fileTreeSlice.reducer

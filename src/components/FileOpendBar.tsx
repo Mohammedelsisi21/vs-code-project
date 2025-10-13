@@ -9,7 +9,7 @@ const FileOpendBar = () => {
     
     return (
     <div>
-      <ul className="flex space-x-3">
+      <ul className="flex space-x-.5">
         {openFile.map((file) => <BarList key={file.id} file={file}/>)}
     </ul>
     {clickedFile.fileContent}
