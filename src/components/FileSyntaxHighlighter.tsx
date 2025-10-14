@@ -3,7 +3,7 @@ import { tomorrowNightBright } from 'react-syntax-highlighter/dist/esm/styles/hl
 
 
 interface IProps {
-    content: string
+    content: string | undefined
 }
 const FileSyntaxhighlighter = ({ content } : IProps) => {
     return (<>

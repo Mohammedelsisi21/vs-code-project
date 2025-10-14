@@ -5,7 +5,7 @@ import type { IFile } from "../../../interfaces";
 interface ICliked {
     activeTab: string | null
     fileName: string,
-    fileContent: string
+    fileContent: string | undefined
 }
 
 interface IInitialState {
