@@ -2,6 +2,7 @@ import { useSelector } from "react-redux"
 import type { RootState } from "../redux/store"
 import { memo } from "react"
 import BarList from "./BarList"
+import FileSyntaxhighlighter from "./FileSyntaxhighlighter"
 
 
 const FileOpendBar = () => {
@@ -12,7 +13,7 @@ const FileOpendBar = () => {
       <ul className="flex space-x-.5">
         {openFile.map((file) => <BarList key={file.id} file={file}/>)}
     </ul>
-    {clickedFile.fileContent}
+    <FileSyntaxhighlighter content={clickedFile.fileContent}/>
     </div>
   )
 }
