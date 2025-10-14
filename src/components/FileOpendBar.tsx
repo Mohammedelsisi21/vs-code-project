@@ -10,7 +10,7 @@ const FileOpendBar = () => {
     
     return (
     <div>
-      <ul className="flex space-x-.5">
+      <ul className="flex space-x-.5 bg-gray-100/10">
         {openFile.map((file) => <BarList key={file.id} file={file}/>)}
     </ul>
     <FileSyntaxhighlighter content={clickedFile.fileContent}/>
