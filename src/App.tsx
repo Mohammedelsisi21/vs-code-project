@@ -12,6 +12,7 @@ const App = () => {
     <>
     <div className="h-screen flex items-start">
       <ResizeablePanel
+      maxSize={60}
       minSize={20}
       collapsedSize={20}
       showLeftPanel
