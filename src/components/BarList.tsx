@@ -18,7 +18,12 @@ const BarList = ({ file } : IPorps) => {
 
   const onRemove = (idSelected: string) => {
     const filterOpenFile = openFile.filter((file) => file.id !== idSelected)
-    const {id ,name, content} = filterOpenFile[filterOpenFile.length - 1]
+    const lastFile = filterOpenFile[filterOpenFile.length - 1]
+    if(!lastFile) {
+      dispatch(setOpenedFile([]))
+      dispatch(setClikedFile({activeTab: null, fileContent: "", fileName: ""}))
+    }
+    const {id ,name, content} = lastFile
     dispatch(setOpenedFile(filterOpenFile))
     dispatch(setClikedFile({activeTab: id, fileContent: content, fileName: name}))
 }
