@@ -4,6 +4,11 @@ A **VS Code-like interface** built with **Vite + React + TypeScript + Tailwind C
 This project simulates a lightweight version of Visual Studio Code, complete with tab management and syntax highlighting.
 
 ---
+  <div align="center">
+    <img src="./src/assets/Home.png" alt="Home" width="90%" style="border-radius: 8px;" />
+  </div>
+
+---
 
 ## Features
 
@@ -28,7 +33,7 @@ This project simulates a lightweight version of Visual Studio Code, complete wit
 | **React-resizable-panels** | Resizable layout panels |
 | **React-syntax-highlighter** | Syntax highlighting for code content |
 | **uuid** | Generate unique IDs dynamically |
-| **Context Menu** that allows you to: | - Close a single tab | - Close all open tabs at once |
+| **Context Menu** that allows you to: | - Close a single tab - Close all open tabs at once |
 
 
 ---

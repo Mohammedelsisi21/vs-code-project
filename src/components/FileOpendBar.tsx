@@ -31,8 +31,3 @@ const FileOpendBar = () => {
 
 export default memo(FileOpendBar)
 
-
-
-// useEffect
-// useRef
-// 

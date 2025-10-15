@@ -18,7 +18,7 @@ const FileExteanionsIcon = ( {fileName, isOpen, isFolder}:IProps) => {
     return <IconImage src={path} alt={fileName}/>
 }
 
-    if(isFolder)return <IconImage src={`/icons/folder-default${isOpen ? "-open" : ""}.svg`} alt={fileName}/>
+    if(isFolder)return <IconImage src={`icons/folder-default${isOpen ? "-open" : ""}.svg`} alt={fileName}/>
 
     return <FileIcon />
 }
