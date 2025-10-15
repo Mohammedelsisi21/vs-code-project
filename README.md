@@ -17,7 +17,7 @@ This project simulates a lightweight version of Visual Studio Code, complete wit
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Technology | Purpose |
 |-------------|----------|
@@ -28,12 +28,12 @@ This project simulates a lightweight version of Visual Studio Code, complete wit
 | **React-resizable-panels** | Resizable layout panels |
 | **React-syntax-highlighter** | Syntax highlighting for code content |
 | **uuid** | Generate unique IDs dynamically |
-| **Context Menu** that allows you to: - Close a single tab - Close all open tabs at once |
+| **Context Menu** that allows you to: | - Close a single tab | - Close all open tabs at once |
 
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 VS_Code_Clone/
 ├── public/
 │ ├── index.html
@@ -52,7 +52,7 @@ VS_Code_Clone/
 
 ---
 
-## ⚙️ Tab Management
+## Tab Management
 
 All opened tabs are stored in **Redux state**, allowing the app to track which files are active or recently opened.
 You can manage tabs directly via the **context menu**, which provides two options:
@@ -61,13 +61,13 @@ You can manage tabs directly via the **context menu**, which provides two option
 
 ---
 
-## 🎮 Demo
+## Demo
 
-🔗 [Live Demo Here](#)
+🔗 [Live Demo Here](https://mohammedelsisi21.github.io/vs-code-project/)
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
 _Add your screenshots below this section:_
 
@@ -79,7 +79,7 @@ _Add your screenshots below this section:_
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 **Mohamed Abdelrafea (Mohamed Elsisi)**
   Indie Developer | React Developer
@@ -88,7 +88,7 @@ _Add your screenshots below this section:_
 
 ---
 
-## 🏃‍♂️ Run the Project
+## Run the Project
 
 ```bash
 # Install dependencies
