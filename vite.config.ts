@@ -7,6 +7,6 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-    base: process.env.NODE_ENV === 'production' ? '/vs-code-project/' : '/',
+    base: '/vs-code-project/',
 
 })
