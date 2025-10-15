@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import type { IFile } from '../interfaces'
 import CloseTab from '../SVG/CloseTab'
 import FileExteanionsIcon from './FileExteanionsIcon'
-import { setClikedFile, setOpenedFile } from '../redux/features/tree/fileTreeSlice'
+import { setAddIdTab, setClikedFile, setOpenedFile } from '../redux/features/tree/fileTreeSlice'
 import type { RootState } from '../redux/store'
 
 interface IPorps  {
@@ -32,7 +32,11 @@ const BarList = ({ file } : IPorps) => {
   return (<>
       <li
       className={`border-b-2 ${file.id === activeTab ? "border-t-[#ccc] bg-[#000000]" : "border-transparent"}`}
-      onClick={onClick}>
+      onClick={onClick}
+      onContextMenu={(e) => {
+        e.preventDefault()
+        dispatch(setAddIdTab(file.id))
+      }}>
         <div className='flex cursor-pointer hover:bg-[#00000057] items-center justify-center w-fit p-2 rounded-md'>
           <FileExteanionsIcon fileName={file.name}/>
           <span className='ml-1'>{file.name}</span>

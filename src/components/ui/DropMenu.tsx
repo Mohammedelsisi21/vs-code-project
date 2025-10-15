@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef } from "react"
-import { useDispatch } from "react-redux"
-import { setOpenedFile } from "../../redux/features/tree/fileTreeSlice"
+import { useDispatch, useSelector} from "react-redux"
+import { setClikedFile, setOpenedFile } from "../../redux/features/tree/fileTreeSlice"
+import type { RootState } from "../../redux/store"
 
 
 interface IPorps {
@@ -11,6 +12,8 @@ interface IPorps {
     }
 }
 const DropMenu = ({positionMenu: {x , y},setShowMenu}:IPorps) => {
+
+    const {addIdRemoveTab, openFile} = useSelector((store: RootState) => store.fileTree)
 
     const dispatch = useDispatch()
     const meuneRef = useRef<HTMLDivElement>(null)
@@ -30,15 +33,27 @@ const DropMenu = ({positionMenu: {x , y},setShowMenu}:IPorps) => {
     },[setShowMenu])
 
 
-    const onRemovTabAll = () => {
+    const onCloseTabAll = () => {
         dispatch(setOpenedFile([]))
     }
-    
+
+    const onCloseTab = () => {
+        const filtered = openFile.filter((file) => file.id  !== addIdRemoveTab)
+        const lastFile = filtered[filtered.length - 1]
+        if(!lastFile) {
+            dispatch(setOpenedFile([]))
+            dispatch(setClikedFile({activeTab: null, fileContent: "", fileName: ""}))
+        }
+        dispatch(setOpenedFile(filtered))
+        const {id, name,content}= lastFile
+        dispatch(setClikedFile({activeTab: id, fileContent: content, fileName: name}))
+        setShowMenu(false)
+    }
     return (
         <div ref={meuneRef}>
             <ul className="border border-gray-200 rounded-md overflow-hidden bg-white/80 text-black" style={{position:"absolute", top: y, left: x}}>
-                <li className="px-3 py-1 cursor-pointer hover:bg-black/20 duration-300 border-b border-b-gray-600">Close</li>
-                <li className="px-3 py-1 cursor-pointer hover:bg-black/20 duration-300" onClick={onRemovTabAll}>Close All</li>
+                <li className="px-3 py-1 cursor-pointer hover:bg-black/20 duration-300 border-b border-b-gray-600" onClick={onCloseTab}>Close</li>
+                <li className="px-3 py-1 cursor-pointer hover:bg-black/20 duration-300" onClick={onCloseTabAll}>Close All</li>
             </ul>
         </div>
     )

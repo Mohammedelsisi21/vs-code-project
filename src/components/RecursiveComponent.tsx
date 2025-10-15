@@ -22,9 +22,9 @@ const RecursiveComponent = ({FileTree}: IProps) => {
 
     const onFileOpen = () => {
         const isOpenFile = doseFileOpend(openFile, id)
-        dispatch(setClikedFile({fileName: name, fileContent: content, activeTab: id})) 
+        dispatch(setClikedFile({fileName: name, fileContent: content, activeTab: id}))
         if(isOpenFile) return
-        dispatch(setOpenedFile([...openFile, FileTree])) 
+        dispatch(setOpenedFile([...openFile, FileTree]))
     }
     return (<>
         <div className="ml-2 mb-2">
