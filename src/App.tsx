@@ -20,8 +20,10 @@ const App = () => {
         <RecursiveComponent FileTree={FileTree}/>
       </div>}
       rightPanel={openFile.length ? <FileOpendBar /> : <HomeWelcome/>}
+      
       />
     </div>
+
 </>)
 }
 

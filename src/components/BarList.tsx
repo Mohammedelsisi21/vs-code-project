@@ -30,11 +30,15 @@ const BarList = ({ file } : IPorps) => {
 
   
   return (<>
-      <li className={`border-b-2 ${file.id === activeTab ? "border-t-[#ccc] bg-[#000000]" : "border-transparent"}`} onClick={onClick}>
+      <li
+      className={`border-b-2 ${file.id === activeTab ? "border-t-[#ccc] bg-[#000000]" : "border-transparent"}`}
+      onClick={onClick}>
         <div className='flex cursor-pointer hover:bg-[#00000057] items-center justify-center w-fit p-2 rounded-md'>
           <FileExteanionsIcon fileName={file.name}/>
           <span className='ml-1'>{file.name}</span>
-          <span className='cursor-pointer hover:bg-[#000000] rounded-md p-.5 ml-1' onClick={(e) => {
+          <span
+          className='cursor-pointer hover:bg-[#000000] rounded-md p-.5 ml-1'
+          onClick={(e) => {
             e.stopPropagation()
             onRemove(file.id)
           }}>
