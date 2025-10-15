@@ -28,9 +28,7 @@ This project simulates a lightweight version of Visual Studio Code, complete wit
 | **React-resizable-panels** | Resizable layout panels |
 | **React-syntax-highlighter** | Syntax highlighting for code content |
 | **uuid** | Generate unique IDs dynamically |
-| **Context Menu** that allows you to: |
-    - Close a single tab
-    - Close all open tabs at once
+| **Context Menu** that allows you to: - Close a single tab - Close all open tabs at once |
 
 
 ---
@@ -66,7 +64,6 @@ You can manage tabs directly via the **context menu**, which provides two option
 ## 🎮 Demo
 
 🔗 [Live Demo Here](#)
-_(Replace “#” with your actual deployed link)_
 
 ---
 
@@ -75,9 +72,9 @@ _(Replace “#” with your actual deployed link)_
 _Add your screenshots below this section:_
 
 <div align="center">
-  <img src="./assets/Home.png" alt="Home" width="30%" style="border-radius: 8px; margin-right: 10px;" />
-  <img src="./assets/Mune.png" alt="Menu" width="30%" style="border-radius: 8px; margin-right: 10px;" />
-  <img src="./assets/openFile.png" alt="Open File" width="30%" style="border-radius: 8px;" />
+  <img src="./src/assets/Home.png" alt="Home" width="30%" style="border-radius: 8px; margin-right: 10px;" />
+  <img src="./src/assets/Mune.png" alt="Menu" width="30%" style="border-radius: 8px; margin-right: 10px;" />
+  <img src="./src/assets/openFile.png" alt="Open File" width="30%" style="border-radius: 8px;" />
 </div>
 
 ---
